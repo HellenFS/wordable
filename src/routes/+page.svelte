@@ -1,2 +1,16 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import Input from '$lib/Input.svelte';
+
+	let valueInputSearch = '';
+
+	async function getWordMeaning() {
+		alert(`Pesquisar por: ${valueInputSearch}`);
+	}
+</script>
+
+<Input
+	id="search-word"
+	placeholder={'Search by...'}
+	onSubmit={() => getWordMeaning()}
+	bind:value={valueInputSearch}
+/>
